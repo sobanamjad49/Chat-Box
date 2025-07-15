@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="Send.css">
+</head>
+<body>
+    
+    <div id="id1">
+<div  style="text-align: center; ;color: white; font-size: 30px; font-weight: 700;" >CHAT BOX</div>
+<div id="id2">
+<div class="id3">
+
+    <div class="id4"> 
+<div>
+    <img style="border-radius: 30px;" id="im1" src="WhatsApp Image 2024-11-20 at 1.07.51 AM.jpeg" height="60" width="60" alt="">
+</div>
+
+<div style="margin-left: 80px; margin-top: 20px; font-size: 20px; font-weight: 900;">
+Anas Chohan
+</div>
+    </div>
+    <div class="id7" id="input1"  >
+        
+    </div>
+    <div style="display: flex; border: 1px solid black; background-color: white; height: 60px;" >
+    <div>
+        <input  id="input2" class="id9" type="text" placeholder="Type a message..."3 >
+   </div>
+    <div>
+    <button onclick="clickop(1)">send</button>
+</div>
+</div>
+</div>
+<div class="id3">
+
+    <div class="id4"> 
+        <div>
+            <img style="border-radius: 30px;"  id="im2" src="WhatsApp Image 2024-11-20 at 2.57.37 AM.jpeg" height="60" width="60" alt="">
+        </div>
+        
+        <div style="margin-left: 100px; margin-top: 20px; font-size: 20px; font-weight: 900;">
+            Soban
+        </div>
+   
+            </div>
+            <div class="id7" id="output1">
+
+            </div>
+            <div style="display: flex; border: 1px solid black; background-color: white; height: 60px;" >
+              
+                <input  id="output2" class="id9" placeholder="Type a message..." type="text">
+               
+           
+            <div>
+            <button onclick="clickop(2)">send</button>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+</div>
+
+
+<script>
+    
+  
+ function clickop(userId)
+    {
+        let currentUserMessageBox;
+      let  typingmessage;
+      let otherMessageBox;
+      let messageText;
+      let currentUserimage
+      let otherimage
+      let img
+      let mydate = new Date()
+      if (userId === 1) {
+    typingmessage = document.getElementById('input2')
+    currentUserMessageBox = document.getElementById('input1')
+    otherMessageBox = document.getElementById('output1')
+   // currentUserimage=document.getElementById('im1')
+    //otherimage=document.getElementById('im2')
+  
+    currentUserimage=('<img style="border-radius:10px " src="WhatsApp Image 2024-11-20 at 1.07.51 AM.jpeg""height="15" width="15" alt="">')
+    otherimage=('<img style="border-radius:10px" src="WhatsApp Image 2024-11-20 at 1.07.51 AM.jpeg"" height="15" width="15" alt="">')
+
+}
+else if(userId === 2){
+    typingmessage = document.getElementById('output2')
+    currentUserMessageBox = document.getElementById('output1')
+    otherMessageBox = document.getElementById('input1')
+    currentUserimage=('<img style="border-radius:10px" src="WhatsApp Image 2024-11-20 at 2.57.37 AM.jpeg" height="15" width="15" alt="">')
+    otherimage=('<img style="border-radius:10px" src="WhatsApp Image 2024-11-20 at 2.57.37 AM.jpeg"height="15" width="15"alt="">')
+}
+
+    messageText = typingmessage.value;
+  if(messageText=="")
+  {
+    alert("PLEAES TYPE THE MESSAGE")
+    return;
+  }
+    currentUserMessageBox.innerHTML +=   '<div class="message right-side" > '+ currentUserimage + messageText +'<div class="date">'+ (mydate.toLocaleTimeString())+'</div>'+'</div>';
+    otherMessageBox.innerHTML +=  '<div class="message left-side"> ' +otherimage + messageText + '<div class="date">'+ (mydate.toLocaleTimeString())+'</div>'+'</div>';
+
+    typingmessage.value = "";
+    
+}
+</script>
+</body>
+</html>
+
+ 
+                 
+
+             
